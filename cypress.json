@@ -1,0 +1,24 @@
+{
+  "defaultCommandTimeout": 6000,
+  "modifyObstructiveCode": true,
+  "experimentalSourceRewriting": true,
+  "chromeWebSecurity": true,
+  "pageLoadTimeout": 70000,
+  "reporter": "mochawesome",
+  "retries": {
+    "runMode": 1
+  },
+
+  "projectId": "9jo58t",
+
+  "db": {
+    "userName": "ondippuli",
+    "password": "J@g@0ndi",
+    "server": "cypressdbintegration.database.windows.net",
+    "options": {
+      "database": "cypress",
+      "encrypt": true,
+      "rowCollectionOnRequestCompletion": true
+    }
+  }
+}
