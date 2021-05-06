@@ -1,5 +1,5 @@
 describe("Timesheet", function () {
-  it("Timesheet No:1", function () {
+  it("Timesheet No:1 - Spring Ahead", function () {
     cy.visit(
       "https://my.springahead.com/go/Account/LogOn?ReturnUrl=%2fgo%2fHome%2fIndex"
     );
@@ -25,6 +25,9 @@ describe("Timesheet", function () {
     ).type(me);
     cy.get(":nth-child(3) > .ui-corner-all").click();
 
+    // Clear existing hours
+    cy.get(":nth-child(1) > :nth-child(-n+7) > .hours").clear();
+
     // Entering the hours
     cy.get(":nth-child(1) > :nth-child(-n+7) > .hours").then((els) => {
       [...els].forEach((el) => cy.wrap(el).type(hours));
@@ -35,7 +38,7 @@ describe("Timesheet", function () {
     cy.get(".htott").should("have.value", 40);
 
     // Save the data
-    // cy.get('#btn_save_continue').click()
+    cy.get("#btn_save_continue").click();
 
     // Save and close the data
     // cy.get("#btn_save");
